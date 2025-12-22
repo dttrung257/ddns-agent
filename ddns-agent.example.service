@@ -1,0 +1,18 @@
+[Unit]
+Description=DDNS Agent - Dynamic DNS Update Service
+After=network.target
+
+[Service]
+WorkingDirectory=<WORK_DIR>
+ExecStart=<PATH_TO_EXEC_FILE>
+EnvironmentFile=<PATH_TO_ENV_FILE>
+Restart=always
+RestartSec=10
+User=<USER>
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
